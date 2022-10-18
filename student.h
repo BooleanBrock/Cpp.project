@@ -31,7 +31,7 @@ public:
 
 //Accessors
         string getId();
-        string getFirstName()
+        string getFirstName();
         string getLastName();
         string getEmail();
         int getAge();
@@ -47,12 +47,12 @@ public:
         void setLastName(string lastName);
         void setEmail(string email);
         void setAge(int age);
-        void setDaysInCourse(const int* daysInCourse[]);
+        void setDaysInCourse(const int* daysInCourse);
         void setDegreeType(DegreeProgram degreeType);
 
 
 
-}
+};
 
 /* 
 a.  an accessor (i.e., getter) for each instance variable from part D1

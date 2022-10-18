@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-using std::string;
-
+//using std::string;
+using namespace std;
 #include "student.h"
 #include "degree.h"
 
@@ -15,24 +15,24 @@ this->firstName = "";
 this->lastName = "";
 this->email = "";
 this->age = -1;
-for(int i = 0; i < daysInCourse.size(); ++i){
+
+for(int i = 0; i < daysCourseArrSize; i++){
     this->daysInCourse[i] = 0;
 }
 this->degreeType = DegreeProgram::UNDECIDED;
 
 }
 
-
 //Alt constructor
 Student::Student(string studentId, string firstName, string lastName, string email, 
-                        int age, int daysInCourse[], DegreeProgram degreeType); {
+                        int age, int daysInCourse[], DegreeProgram degreeType) {
           this->studentId = studentId;
           this->firstName = firstName;
           this->lastName = lastName;
           this->email = email;
           this->age = age;
-          for (int i = 0; i < daysInCourse.size(); ++i) this->daysInCourse[i] = daysInCourse[i];
-          this->degreeType = degType;
+          for (int i = 0; i < daysCourseArrSize; i++) this->daysInCourse[i] = daysInCourse[i];
+          this->degreeType = degreeType;
                     }
 
 //Accessor definitions
@@ -58,7 +58,7 @@ Student::Student(string studentId, string firstName, string lastName, string ema
     return this->degreeType;
  }
 
-void Student::printTableHeader(){
+ void Student::printTableHeader(){
     cout << "Student ID\t";
     cout << "First Name\t";
     cout << "Last Name\t";
@@ -69,7 +69,6 @@ void Student::printTableHeader(){
 }
 
 void Student::print(){
-    //add function here!
     cout << this->studentId <<'\t';
     cout << this->firstName <<'\t';
     cout << this->lastName <<'\t';
@@ -100,8 +99,8 @@ void Student::setEmail(string email){
 void Student::setAge(int age){
     this->age = age;
 }
-void Student::setDaysInCourse(const int daysInCourse[]){
-    for (int i = 0; i < daysInCourse.size(); ++i) {
+void Student::setDaysInCourse(const int* daysInCourse){
+    for (int i = 0; i < daysCourseArrSize; i++) {
         this->daysInCourse[i] = daysInCourse[i];
     }
 }
