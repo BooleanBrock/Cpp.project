@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
-//using std::string;
 using namespace std;
 #include "student.h"
 #include "degree.h"
 
-//Function definitions
+
+//Function definitions for Student class
 
 
 //Default constructor
@@ -59,7 +59,7 @@ Student::Student(string studentId, string firstName, string lastName, string ema
  }
 
  
-
+//Print student info
 void Student::print(){
     cout << this->studentId <<'\t';
     cout << "First Name: " << this->firstName <<'\t';

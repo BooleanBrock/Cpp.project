@@ -13,6 +13,7 @@ cout << "Using C++" << std::endl;
 cout << "Wyatt Brock" << std::endl;
 cout << "-------------------------------------" << std::endl;
 
+//student data to be parsed and create student objects
 string studentData[] =
 
 {
@@ -23,21 +24,25 @@ string studentData[] =
 "A5,Wyatt,Brock,wyattbrock7@gmail.com,26,12,25,30,SOFTWARE"
 };
 
+
 const int numStudents = 5;
 
 Roster classRoster;//Creates roster default constructor and parses data
-
+//Parse data, create student objects and add them to array 
 for (int i = 0; i < numStudents; i++){
     classRoster.parse(studentData[i]);
 }
 
+//Shows all students
 cout << std::endl << "Displaying all students:" << std::endl;
 classRoster.printAll();
 
+//Shows all invalid emails
 cout << "Displaying students with invalid emails: " << std::endl << std::endl;
 classRoster.printInvalidEmail();
 cout << std::endl;
 
+//Shows average number of days in course for each student.
 cout << "Displaying average days in course for each student: " << std::endl << std::endl;
 for (int i = 0; i < numStudents; i++) {
     
@@ -45,19 +50,22 @@ for (int i = 0; i < numStudents; i++) {
     cout << std::endl;
 }
 
+//Separates students by degree program
+ 
+    cout << std::endl << "Displaying each student by degree program: " <<  std::endl;
+    classRoster.printByDegree((DegreeProgram::SOFTWARE));
+ 
 
- for(int i = 1; i < 4; i++) {
-    cout << std::endl << "Displaying each student by degree program: " << degreeTypeStrings[i] << std::endl;
-    classRoster.printByDegree((DegreeProgram)i);
- }
-
+//Remove student
 cout << "Removing student A3: " << std::endl;
 classRoster.removeStudentById("A3");
 cout << std::endl;
 
+//Display new table without student A3
 cout << "Displaying new student data table: " << std::endl;
 classRoster.printAll();
 
+//Attempt to remove student and will show that none were found
 classRoster.removeStudentById("A3");
 cout << std::endl;
 

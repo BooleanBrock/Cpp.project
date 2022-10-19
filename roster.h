@@ -4,19 +4,23 @@
 #include <iostream>
 #include <string>
 #include "student.h"
-//#include "degree.h"
+
+//Create Roster class
 class Roster {
 
 public:
     int lastInd = -1;
     const static int numStudents = 5;
 
-    //Roster();
+    //No default constructor created, C++ automatically defines default constructor if none created
 
+    //Pointer array for student objects
     Student* classRosterArray[numStudents] = { nullptr, nullptr, nullptr, nullptr, nullptr };
 
+    //Parse function
     void parse(string row);
 
+    //Add function
     void add(string studID, string studFirstName, string studLastName, string studEmail, 
                     int studAge, int studNumDays1, int studNumDays2, int studNumDays3, DegreeProgram dt);
 
@@ -26,6 +30,7 @@ public:
     void printAvgNumDays(string studID);//Will display average number of days left in course
     void removeStudentById(string studID);//remove specified student by their ID     
 
+    //Deconsstructor
     ~Roster();       
 };
 

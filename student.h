@@ -7,13 +7,16 @@
 #include "degree.h"
 using std::string;
 
+//Student function declarations
 class Student
 {
 
 public: 
+//Days to complete course is always 3 integers
         const static int daysCourseArrSize = 3;
 
 private:
+//All private info that is not to be accessible by user
         string studentId;
         string firstName;
         string lastName;
@@ -26,6 +29,7 @@ public:
 
     Student(); //Default constructor, no parameters
 
+    //Alt constructor that accepts student info as arguments to parameters
     Student(string studentId, string firstName, string lastName, string email, 
                         int age, int daysInCourse[], DegreeProgram degreeType);
 
@@ -55,14 +59,3 @@ public:
 
 #endif
 
-/* 
-a.  an accessor (i.e., getter) for each instance variable from part D1
-
-b.  a mutator (i.e., setter) for each instance variable from part D1
-
-c.  All external access and changes to any instance variables of the Student class must be done using accessor and mutator functions.
-
-d.  constructor using all of the input parameters provided in the table
-
-e.  print() to print specific student data 
-*/
