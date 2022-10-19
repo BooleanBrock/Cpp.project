@@ -1,15 +1,17 @@
-#pragma once
+
+#ifndef ROSTER_HEADER
+#define ROSTER_HEADER
 #include <iostream>
 #include <string>
 #include "student.h"
-#include "degree.h"
+//#include "degree.h"
 class Roster {
 
 public:
     int lastInd = -1;
     const static int numStudents = 5;
 
-    Roster();
+    //Roster();
 
     Student* classRosterArray[numStudents] = { nullptr, nullptr, nullptr, nullptr, nullptr };
 
@@ -27,6 +29,7 @@ public:
     ~Roster();       
 };
 
+#endif
 /*Create an array of pointers, classRosterArray, to hold the data provided in the “studentData Table.”
 
 2.  Create a student object for each student in the data table and populate classRosterArray.

@@ -58,26 +58,16 @@ Student::Student(string studentId, string firstName, string lastName, string ema
     return this->degreeType;
  }
 
- void Student::printTableHeader(){
-    cout << "Student ID\t";
-    cout << "First Name\t";
-    cout << "Last Name\t";
-    cout << "Email\t";
-    cout << "Days in Course\t";
-    cout << "Degree Type\t";
-    cout << endl;
-}
+ 
 
 void Student::print(){
     cout << this->studentId <<'\t';
-    cout << this->firstName <<'\t';
-    cout << this->lastName <<'\t';
-    cout << this->email <<'\t';
-    cout << this->age <<'\t';
-    cout << this->daysInCourse[0] <<'\t';
-    cout << this->daysInCourse[1] <<'\t';
-    cout << this->daysInCourse[2] <<'\t';
-    cout << degreeTypeStrings[(int)this->degreeType];
+    cout << "First Name: " << this->firstName <<'\t';
+    cout << "Last Name: " << this->lastName <<'\t';
+    cout << "Email: " <<this->email <<'\t';
+    cout << "Age: " <<this->age <<'\t' << "\t";
+    cout << "Days in course:" << "{" << this->daysInCourse[0] << ", " << daysInCourse[2] << ", " << daysInCourse[3] << "}" << '\t' << "\t";
+    cout << "Degree Type: " <<degreeTypeStrings[(int)this->degreeType] << endl;
     cout << endl;
 }
  

@@ -1,11 +1,11 @@
 
 #include "degree.h"
 #include "roster.h"
-#include "student.cpp"
 #include <string>
 
 using namespace std;
 
+     //Roster::Roster(){}
 
 void Roster::parse(string studentInfo) {
     DegreeProgram dt = DegreeProgram::UNDECIDED; 
@@ -45,14 +45,16 @@ void Roster::add(string studID, string studFirstName, string studLastName, strin
 
 void Roster::printAll() {
     
-    Student::printTableHeader(); //From Student class
+   
     for (int i = 0; i <= Roster::lastInd; i++) {
-        Roster::classRosterArray[i]->print(); //Students will be displayed 
+        Roster::classRosterArray[i]->print(); //Students will be displayed
+        cout << endl; 
     }
 }                
 
+
 void Roster::printByDegree(DegreeProgram dt){
-        Student::printTableHeader();
+    
         for (int i = 0; i <= Roster::lastInd; i++) {
             if(Roster::classRosterArray[i]->getDegreeType() == dt) {
                 classRosterArray[i]->print();

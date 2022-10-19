@@ -1,4 +1,8 @@
+#include <iostream>
+#include <iomanip>
 #include "roster.h"
+//#include "student.h"
+//#include "degree.h"
 using std::cout;
 int main(){
 
@@ -12,45 +16,61 @@ cout << "-------------------------------------" << std::endl;
 string studentData[] =
 
 {
-"A1, John, Smith, John1989@gm ail.com, 20, 30, 35, 40, SECURITY",
-"A2, Suzan, Erickson, Erickson_1990@gmailcom, 19, 50, 30, 40, NETWORK",
-"A3, Jack, Napoli, The_lawyer99yahoo.com, 19, 20, 40, 33, SOFTWARE",
-"A4, Erin, Black, Erin.black@comcast.net, 22, 50, 58, 40, SECURITY",
-"A5, Wyatt, Brock, wyattbrock7@gmail.com, 26, 12, 25, 30, SOFTWARE"
+"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
+"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
+"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
+"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
+"A5,Wyatt,Brock,wyattbrock7@gmail.com,26,12,25,30,SOFTWARE"
 };
 
 const int numStudents = 5;
 
 Roster classRoster;//Creates roster default constructor and parses data
 
-cout << "Displaying all students:" << std::endl;
+for (int i = 0; i < numStudents; i++){
+    classRoster.parse(studentData[i]);
+}
+
+cout << std::endl << "Displaying all students:" << std::endl;
 classRoster.printAll();
 
-for (int i = 0; i < 5; i++) {
-
-    cout << "Displaying by degree type:" << degreeTypeStrings[i] << std::endl;
-    classRoster.printByDegree((DegreeProgram)i);
-}
-
-cout << "Displaying students with invalid emails: " << std::endl;
+cout << "Displaying students with invalid emails: " << std::endl << std::endl;
 classRoster.printInvalidEmail();
+cout << std::endl;
 
-cout << "Displaying average days in course for each student: " << std::endl;
+cout << "Displaying average days in course for each student: " << std::endl << std::endl;
 for (int i = 0; i < numStudents; i++) {
+    
     classRoster.printAvgNumDays(classRoster.classRosterArray[i]->getId());
+    cout << std::endl;
 }
+
+
+ for(int i = 1; i < 4; i++) {
+    cout << std::endl << "Displaying each student by degree program: " << degreeTypeStrings[i] << std::endl;
+    classRoster.printByDegree((DegreeProgram)i);
+ }
 
 cout << "Removing student A3: " << std::endl;
 classRoster.removeStudentById("A3");
+cout << std::endl;
 
+cout << "Displaying new student data table: " << std::endl;
 classRoster.printAll();
 
 classRoster.removeStudentById("A3");
+cout << std::endl;
 
 cout << "Task complete. Destructor called upon exit." << std::endl;
 
+
 return 0;
 };
+
+
+
+
+
 /*Demonstrate the program’s required functionality by adding a main() function in main.cpp, which will contain the required function calls to achieve the following results:
 
 1.  Print out to the screen, via your application, the course title, the programming language used, your WGU student ID, and your name.

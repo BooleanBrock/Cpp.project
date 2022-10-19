@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef STUDENT_HEADER
+#define STUDENT_HEADER
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -38,7 +40,7 @@ public:
         const int* getDaysInCourse();
         DegreeProgram getDegreeType();
 
-        static void printTableHeader();
+        
         void print();
 
 //Mutators
@@ -49,10 +51,9 @@ public:
         void setAge(int age);
         void setDaysInCourse(const int* daysInCourse);
         void setDegreeType(DegreeProgram degreeType);
-
-
-
 };
+
+#endif
 
 /* 
 a.  an accessor (i.e., getter) for each instance variable from part D1
